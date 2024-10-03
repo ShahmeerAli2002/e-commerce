@@ -6,7 +6,7 @@ const BlogSection = () => {
     {
       id: 67,
       date: "Sep 30, 2024",
-      img: "/image/updates1.jfif",
+      img: "/image/updates1.jpg",
       title: "Latest Trends in Educational Toys",
       description: "Discover the newest educational toys that are both fun and beneficial for child development."
     },
@@ -18,7 +18,7 @@ const BlogSection = () => {
     },
    {
       date: "Sep 25, 2024",
-      img: "/image/updates3.jfif",
+      img: "/image/upadets3.png",
       title: "Eco-Friendly Toys: A Growing Trend",
       description: "Learn about the rise of sustainable and environmentally friendly toys in the market."
     }
