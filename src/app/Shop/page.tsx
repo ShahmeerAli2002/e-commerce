@@ -36,16 +36,12 @@ const NewArrivals = () => {
       );
     }
 
-    setProducts(shuffleArray(filteredProducts).slice(0, 30));
-  };
-
-  const shuffleArray = (array: IProduct[]) => {
-    return [...array].sort(() => Math.random() - 0.5);
+    setProducts(filteredProducts.slice(0, 30));
   };
 
   useEffect(() => {
     filterProducts("All", "All Ages");
-  }, [filterProducts]);
+  }, []);
 
   return (
     <section className="bg-gray-100 py-8 sm:py-16">

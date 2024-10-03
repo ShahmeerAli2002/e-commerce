@@ -10,7 +10,6 @@ const PlayfairDisplay = PlayfairDisplayFont({
   subsets: ["latin"],
 });
 
-// const categories = [""];
 const ageGroups = ["All Ages", "0-3 Years", "4-7 Years", "8-12 Years", "13+ Years"];
 
 const NewArrivals = () => {
@@ -36,16 +35,12 @@ const NewArrivals = () => {
       );
     }
 
-    setProducts(shuffleArray(filteredProducts).slice(0, 12));
-  };
-
-  const shuffleArray = (array: IProduct[]) => {
-    return [...array].sort(() => Math.random() - 0.5);
+    setProducts(filteredProducts.slice(0, 12));
   };
 
   useEffect(() => {
     filterProducts("All", "All Ages");
-  }, [filterProducts]);
+  }, []);
 
   return (
     <section className="bg-gray-100 py-8 sm:py-16">
@@ -55,8 +50,6 @@ const NewArrivals = () => {
         >
            Kids Products by Age
         </h2>
-
-       
 
         {/* Age Group Filter */}
         <div className="flex flex-wrap justify-center mb-8 sm:mb-12">
