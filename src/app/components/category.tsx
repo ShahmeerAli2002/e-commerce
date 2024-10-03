@@ -6,7 +6,7 @@ export default function Category() {
   const [currentCategoryIndex, setCurrentCategoryIndex] = useState(0);
   
   const categories = [
-    { type: 'Action toys', img: '/image/category1.jfif', quantity: 10 },
+    { type: 'Action toys', img: '/image/category1.jpg', quantity: 10 },
     { type: 'Teddy bear', img: '/image/category2.png', quantity: 8 },
     { type: 'Dolls', img: '/image/category3.jpeg', quantity: 8 },
     { type: 'Remote Control Car', img: '/image/category4.jpg', quantity: 8 },

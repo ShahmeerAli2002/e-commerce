@@ -34,11 +34,11 @@ const NavBar = ({ setShowCart }: NavBarProps) => {
        
         <Link href="/" className="flex items-center">
           <Image
-            src="/image/toysland-removebg-preview.png"
+            src="/image/logo1.png"
             alt="Toyshland Logo"
-            width={48}
-            height={48}
-            className="h-8 w-auto sm:h-12"
+            width={96}
+            height={96}
+            className="h-12 w-auto sm:h-16"
           />
         </Link>
 
