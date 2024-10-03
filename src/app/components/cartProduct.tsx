@@ -3,11 +3,11 @@ import { RxCross1 } from "react-icons/rx";
 import { removeFromCart } from "../redux/feature/cartSlice";
 
 interface propsType {
-  id: number | string;
+  id: any;
   img: string;
   name: string;
   price: string;
-  quantity: number;
+  quantity: any;
 }
 
 const CartProduct: React.FC<propsType> = ({ id, img, name, price, quantity }) => {
@@ -26,13 +26,7 @@ const CartProduct: React.FC<propsType> = ({ id, img, name, price, quantity }) =>
       </div>
       <RxCross1
         className="cursor-pointer"
-        onClick={() => dispatch(removeFromCart({
-          id,
-          name: "",
-          image: "",
-          price: 0,
-          quantity: 0
-        }))} 
+        onClick={() => dispatch(removeFromCart(id))} 
       />
     </div>
   );

@@ -1,5 +1,6 @@
 "use client";
 import Link from "next/link";
+
 import React, { useState, useEffect, useCallback } from "react";
 import { FaShopify } from "react-icons/fa";
 import { FcSearch } from "react-icons/fc";
@@ -22,6 +23,10 @@ const NavBar = ({ setShowCart }: NavBarProps) => {
   useEffect(() => {
     filterProducts();
   }, [filterProducts]);
+
+
+
+
 
   return (
     <div className="bg-gradient-to-r from-[#0a2e73] via-[#5078f0] to-[#a3caff] py-4 sticky top-0 z-10 shadow-lg border-t-4 border-yellow-400 shadow-yellow-950">
