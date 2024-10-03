@@ -1,4 +1,5 @@
 import React from 'react';
+import Image from 'next/image';
 
 type BlogCardProps = {
   img: string;
@@ -10,10 +11,12 @@ type BlogCardProps = {
 const BlogCard: React.FC<BlogCardProps> = ({ img, title, date, description }) => {
   return (
     <div className="space-y-4">
-      <img
+      <Image
         className="rounded-lg hover:scale-105 transition-transform w-full h-48 object-cover"
         src={img}
         alt={title}
+        width={500}
+        height={300}
       />
       <div className="text-accent font-medium">
         <span>{date}</span>

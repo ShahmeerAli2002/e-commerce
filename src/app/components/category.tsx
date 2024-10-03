@@ -1,23 +1,24 @@
 "use client"
 import React, { useState, useEffect } from 'react';
+import Image from 'next/image';
 
 export default function Category() {
   const [currentCategoryIndex, setCurrentCategoryIndex] = useState(0);
   
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentCategoryIndex((prevIndex) => (prevIndex + 1) % categories.length);
-    }, 3000); 
-
-    return () => clearInterval(interval);
-  }, []);
-
   const categories = [
     { type: 'Action toys', img: '/image/category1.jfif', quantity: 10 },
     { type: 'Teddy bear', img: '/image/category2.png', quantity: 8 },
     { type: 'Dolls', img: '/image/category3.jpeg', quantity: 8 },
     { type: 'Remote Control Car', img: '/image/category4.jpg', quantity: 8 },
   ];
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentCategoryIndex((prevIndex) => (prevIndex + 1) % categories.length);
+    }, 3000); 
+
+    return () => clearInterval(interval);
+  }, [categories.length]);
 
   return (
     <div className="container mx-auto px-4 text-center text-white mt-10">
@@ -37,7 +38,7 @@ export default function Category() {
                   : 'scale-95 sm:scale-90 opacity-70'
               }`}
             >
-              <img
+              <Image
                 src={category.img}
                 alt={`Category image of ${category.type}`}
                 className="mx-auto object-cover rounded-2xl shadow-lg border-4 border-red-700"

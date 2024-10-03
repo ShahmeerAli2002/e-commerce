@@ -1,23 +1,38 @@
 "use client";
 import Link from "next/link";
-import React, { useState } from "react";
-import { FaOpencart, FaShopify } from "react-icons/fa";
+import React, { useState, useEffect, useCallback } from "react";
+import { FaShopify } from "react-icons/fa";
 import { FcSearch } from "react-icons/fc";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { useAppSelector } from "../redux/hooks";
+import Image from "next/image";
 
-const NavBar = ({ setShowCart }: any) => {
+interface NavBarProps {
+  setShowCart: (show: boolean) => void;
+}
+
+const NavBar = ({ setShowCart }: NavBarProps) => {
   const cartCount = useAppSelector((state) => state.cartReducer.length);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  const filterProducts = useCallback(() => {
+    // Your filterProducts logic here
+  }, []);
+
+  useEffect(() => {
+    filterProducts();
+  }, [filterProducts]);
 
   return (
     <div className="bg-gradient-to-r from-[#0a2e73] via-[#5078f0] to-[#a3caff] py-4 sticky top-0 z-10 shadow-lg border-t-4 border-yellow-400 shadow-yellow-950">
       <div className="container mx-auto px-4 flex justify-between items-center">
        
         <Link href="/" className="flex items-center">
-          <img
+          <Image
             src="/image/toysland-removebg-preview.png"
             alt="Toyshland Logo"
+            width={48}
+            height={48}
             className="h-8 w-auto sm:h-12"
           />
         </Link>

@@ -10,7 +10,7 @@ const PlayfairDisplay = PlayfairDisplayFont({
   subsets: ["latin"],
 });
 
-const categories = [""];
+// const categories = [""];
 const ageGroups = ["All Ages", "0-3 Years", "4-7 Years", "8-12 Years", "13+ Years"];
 
 const NewArrivals = () => {
@@ -45,7 +45,7 @@ const NewArrivals = () => {
 
   useEffect(() => {
     filterProducts("All", "All Ages");
-  }, []);
+  }, [filterProducts]);
 
   return (
     <section className="bg-gray-100 py-8 sm:py-16">
@@ -56,22 +56,7 @@ const NewArrivals = () => {
            Kids Products by Age
         </h2>
 
-        {/* Category Filter */}
-        <div className="flex flex-wrap justify-center mb-8 sm:mb-4">
-          {categories.map((category) => (
-            <button
-              key={category}
-              onClick={() => filterProducts(category, activeAgeGroup)}
-              className={`mx-1 sm:mx-2 px-3 sm:px-4 py-1 sm:py-2 rounded-full text-sm sm:text-base mb-2 sm:mb-0 ${
-                activeCategory === category
-                  ? "bg-blue-500 text-white"
-                  : "bg-white text-gray-700 hover:bg-gray-200"
-              }`}
-            >
-              {category}
-            </button>
-          ))}
-        </div>
+       
 
         {/* Age Group Filter */}
         <div className="flex flex-wrap justify-center mb-8 sm:mb-12">

@@ -4,11 +4,9 @@ import { useState, useEffect } from 'react';
 
 import Data from '../../utils/ProductData';
 import Image from 'next/image';
-import { AiOutlineHeart, AiOutlineShoppingCart } from 'react-icons/ai';
 import { FaFacebook, FaTwitter, FaInstagram } from 'react-icons/fa';
 import { MdStarBorderPurple500 } from 'react-icons/md';
 import { MdStarBorder } from "react-icons/md"
-import { useRouter } from 'next/router';
 import { useAppDispatch } from '../../redux/hooks';
 import { addTocart } from '../../redux/feature/cartSlice';
 

@@ -11,7 +11,7 @@ const PlayfairDisplay = PlayfairDisplayFont({
 });
 
 const categories = ["All"];
-const ageGroups = [""];
+// const ageGroups = [""];
 
 const NewArrivals = () => {
   const [activeCategory, setActiveCategory] = useState("All");
@@ -45,7 +45,7 @@ const NewArrivals = () => {
 
   useEffect(() => {
     filterProducts("All", "All Ages");
-  }, []);
+  }, [filterProducts]);
 
   return (
     <section className="bg-gray-100 py-8 sm:py-16">
@@ -74,21 +74,7 @@ const NewArrivals = () => {
         </div>
 
         {/* Age Group Filter */}
-        <div className="flex flex-wrap justify-center mb-8 sm:mb-12">
-          {ageGroups.map((ageGroup) => (
-            <button
-              key={ageGroup}
-              onClick={() => filterProducts(activeCategory, ageGroup)}
-              className={`mx-1 sm:mx-2 px-3 sm:px-4 py-1 sm:py-2 rounded-full text-sm sm:text-base mb-2 sm:mb-0 ${
-                activeAgeGroup === ageGroup
-                  ? "bg-purple-500 text-white"
-                  : "bg-white text-gray-700 hover:bg-gray-200"
-              }`}
-            >
-              {ageGroup}
-            </button>
-          ))}
-        </div>
+       
 
         {/* Product Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 sm:gap-8">
